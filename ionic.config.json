@@ -1,0 +1,8 @@
+{
+  "name": "Mysrapbook",
+  "app_id": "38ffa764",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
