@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignUpPage } from '../sign-up/sign-up';
 import { NgForm } from '@angular/forms';
-import { AuthService } from '../../services/auth';
+//import { AuthService } from '../../services/auth';
+import firebase from 'firebase';
+import { DashboardPage } from '../dashboard/dashboard';
 
 
 @IonicPage()
@@ -13,8 +15,8 @@ import { AuthService } from '../../services/auth';
 export class SignInPage {
 
   constructor(public navCtrl: NavController, 
-            public navParams: NavParams,
-            public authService : AuthService) {
+            //private authService : AuthService
+          ) {
   }
 
   pushSignUp(){
@@ -22,7 +24,9 @@ export class SignInPage {
   }
 
   onSignin(form : NgForm){
-    this.authService.signin(form.value.email, form.value.password);
+    firebase.auth().signInWithEmailAndPassword(form.value.email, form.value.password);
+    this.navCtrl.popToRoot(DashboardPage);
+    //this.authService.signin(form.value.email, form.value.password);
   }
 
 }
