@@ -2,11 +2,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Dashboard</ion-title>
+    <ion-title text-center>Dashboard</ion-title>
+    <ion-buttons left>
+      <button (click)="logout()">logout</button>
+    </ion-buttons>
+  
+    <ion-buttons right>
+      <button (click)="addEvent()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  
   </ion-navbar>
-<ion-buton right>
-  <button (click)="logout()">logout</button>
-</ion-buton>
 </ion-header>
 
 

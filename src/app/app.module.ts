@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { SignInPage } from '../pages/sign-in/sign-in';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { EventPage } from '../pages/event/event';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
     SignInPage,
     SignUpPage,
     DashboardPage,
+    EventPage,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,7 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
     SignInPage,
     SignUpPage,
     DashboardPage,
+    EventPage
   ],
   providers: [
     StatusBar,
