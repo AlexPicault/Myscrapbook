@@ -25,7 +25,7 @@ export class SignInPage {
 
   onSignin(form : NgForm){
     firebase.auth().signInWithEmailAndPassword(form.value.email, form.value.password);
-    this.navCtrl.popToRoot(DashboardPage);
+    this.navCtrl.push(DashboardPage);
     //this.authService.signin(form.value.email, form.value.password);
   }
 
