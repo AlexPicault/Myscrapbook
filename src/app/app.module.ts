@@ -9,6 +9,9 @@ import { SignInPage } from '../pages/sign-in/sign-in';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { EventPage } from '../pages/event/event';
+import { Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { EventPage } from '../pages/event/event';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Camera,
+    File,
+    FileTransfer,
   ]
 })
 export class AppModule {}
