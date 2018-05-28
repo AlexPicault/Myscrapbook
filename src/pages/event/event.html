@@ -5,27 +5,31 @@
   </ion-navbar>
 
 </ion-header>
+
+
 <ion-content padding>
-  <ion-list>
-    <ion-item>
-      <ion-label>Title</ion-label>
-      <ion-input type="text" mgModel name="title" required>
-      </ion-input>
-    </ion-item>
+  <form[formGroup]="eventForm" (ngSubmit)="addEvent(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label>Title</ion-label>
+        <ion-input type="text" mgModel name="title" required>
+        </ion-input>
+      </ion-item>
 
-    <ion-item>
-      <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
-    </ion-item>
-    <ion-item>
-      <button ion-button (click)="uploadFile()">Upload</button>
-    </ion-item>
+      <ion-item>
+        <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
+      </ion-item>
+      <ion-item>
+        <button ion-button (click)="uploadFile()">Upload</button>
+      </ion-item>
 
-    <ion-item>
-      <ion-buttons>
-        <button (click)="takePicture()">
-          <ion-icon name="camera"></ion-icon>
-        </button>
-      </ion-buttons>
-    </ion-item>
-  </ion-list>
+      <ion-item>
+        <ion-buttons>
+          <button (click)="takePicture()">
+            <ion-icon name="camera"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+  </form>
 </ion-content>
