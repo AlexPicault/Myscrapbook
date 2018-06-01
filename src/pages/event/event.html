@@ -8,17 +8,17 @@
 
 
 <ion-content padding>
-  <form[formGroup]="eventForm" (ngSubmit)="addEvent(f)">
+  <form  #f="ngForm" (ngSubmit)="addEvent(f)">
     <ion-list>
       <ion-item>
         <ion-label>Title</ion-label>
-        <ion-input type="text" mgModel name="title" required>
+        <ion-input type="text" name="title" ngModel required>
         </ion-input>
       </ion-item>
 
-      <ion-item>
-        <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
-      </ion-item>
+      <!-- <ion-item>
+        image space<img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
+      </ion-item> -->
       <ion-item>
         <button ion-button (click)="uploadFile()">Upload</button>
       </ion-item>
@@ -30,6 +30,15 @@
           </button>
         </ion-buttons>
       </ion-item>
+      <ion-item>
+          <ion-buttons>
+              <button
+              type="submit"
+              ion-button
+              block
+              [disabled]="!f.valid">Add</button>
+          </ion-buttons>
+        </ion-item>
     </ion-list>
   </form>
 </ion-content>

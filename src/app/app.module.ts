@@ -13,6 +13,8 @@ import { EventPage } from '../pages/event/event';
 import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { AuthService } from '../services/auth';
+import { eventService } from '../services/event';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
     Camera,
     File,
     FileTransfer,
+    AuthService,
+    //eventService,
   ]
 })
 export class AppModule {}

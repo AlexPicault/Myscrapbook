@@ -5,13 +5,14 @@ import { Camera } from '@ionic-native/camera';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { eventService } from '../../services/event';
 import { FormGroup } from '@angular/forms';
+import { NgForm } from "@angular/forms";
 
 @IonicPage()
 @Component({
   selector: 'page-event',
   templateUrl: 'event.html',
 })
-export class EventPage implements OnInit{
+export class EventPage{
   imageURI: any;
   imageFileName: any;
   event : Event;
@@ -19,7 +20,7 @@ export class EventPage implements OnInit{
   index : number;
 
   constructor(
-    public eventService : eventService,
+    //public eventService : eventService,
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
     private transfer: FileTransfer,
@@ -27,7 +28,9 @@ export class EventPage implements OnInit{
     public navParams: NavParams,
     private camera: Camera) { }
 
-  addEvent(){
+  addEvent(form: NgForm){
+    console.log("je suis la");
+    console.log(form.value);
     //this.eventService.addEvent();
   }
 
