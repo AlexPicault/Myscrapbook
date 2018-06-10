@@ -18,6 +18,7 @@ export class EventPage{
   event : Event;
   eventForm : FormGroup;
   index : number;
+  base64Image:any;
 
   constructor(
     //public eventService : eventService,
@@ -48,6 +49,17 @@ export class EventPage{
       //this.tospresentToast(err);
     });
   }
+
+  accessGallery(){
+    this.camera.getPicture({
+      sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
+      destinationType: this.camera.DestinationType.DATA_URL
+     }).then((imageData) => {
+       this.base64Image = 'data:image/jpeg;base64,'+imageData;
+      }, (err) => {
+       console.log(err);
+     });
+   }
 
   uploadFile() {
     let loader = this.loadingCtrl.create({
