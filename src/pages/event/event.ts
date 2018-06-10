@@ -28,6 +28,7 @@ export class EventPage{
     public navParams: NavParams,
     private camera: Camera) { }
 
+
   addEvent(form: NgForm){
     console.log("je suis la");
     console.log(form.value);
@@ -35,17 +36,16 @@ export class EventPage{
   }
 
   getImage() {
-    const options: CameraOptions = {
+    const options = {
       quality: 100,
       destinationType: this.camera.DestinationType.FILE_URI,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
     }
-
     this.camera.getPicture(options).then((imageData) => {
       this.imageURI = imageData;
     }, (err) => {
       console.log(err);
-      this.tospresentToast(err);
+      //this.tospresentToast(err);
     });
   }
 

@@ -10,7 +10,9 @@ declare var cordova: any;
 export class eventService {
     private events: Event[] = [];
 
-    constructor(private http: Http, private authService: AuthService) { }
+    constructor(
+        //private http: Http, 
+        private authService: AuthService) { }
 
     addEvent(title: string, imageUrl: string, ) {
         const event = new Event(title, imageUrl);
@@ -29,12 +31,12 @@ export class eventService {
         this.events.splice(index, 1);
     }
 
-    storeEvent(token: string) {
+    /* storeEvent(token: string) {
         const userId = this.authService.getActiveUser().uid;
         return this.http.put('https://scrapbook-29036.firebaseio.com/ ' + userId + '/events.json?auth=' + token, this.events)
             .map((response: Response) => response.json);
-    }
-
+    } */
+/* 
     fetchEvent(token: string) {
         const userId = this.authService.getActiveUser().uid;
         return this.http.get('https://scrapbook-29036.firebaseio.com/ ' + userId + '/events.json?auth=' + token, this.events)
@@ -47,6 +49,6 @@ export class eventService {
                 } else {
                     this.events = [];
                 }
-            });
-    }
+            }); */
+    //}
 }
